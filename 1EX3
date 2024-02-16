@@ -1,0 +1,22 @@
+package br.com.fiap;
+
+import java.util.Scanner;
+
+public class EX3 {
+
+	public static void main(String[] args) {
+		int x;
+		Scanner scan;
+		try {
+			scan = new Scanner(System.in);
+			
+			System.out.println("Raio: ");
+			x = scan.nextInt();
+			
+			System.out.println((x * x)*3.14);
+		
+		}catch(Exception e) {
+			
+		}
+	}
+}
