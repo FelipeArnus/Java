@@ -1,0 +1,22 @@
+package br.com.fiap;
+
+import javax.swing.JOptionPane;
+
+public class EX2 {
+
+	public static void main(String[] args) {
+		int nsc, ano;
+		String aux;		
+		try {
+			aux = JOptionPane.showInputDialog("Receba nascimento: ");
+			nsc = Integer.parseInt(aux); //caso o numero entregado não seja int ele se tornará 
+			aux = JOptionPane.showInputDialog("Ano: ");
+			ano = Integer.parseInt(aux);
+			
+			JOptionPane.showMessageDialog(null, ano - nsc);
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
+}
