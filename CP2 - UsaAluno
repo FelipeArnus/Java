@@ -1,0 +1,67 @@
+package br.com.fiap;
+
+import java.time.LocalDate;
+import java.util.Scanner;
+
+public class UsaAluno {
+    public static void main(String[] args) {
+    	
+    	//Variaveis
+        int rm;
+        String nome, data;
+        LocalDate dataNsc;
+        
+        LocalDate dataAtual = LocalDate.now();//Declaração do tempo atual
+        
+        Scanner scan = new Scanner(System.in);//Inicialização do Scanner
+        
+        // Instanciando dois objetos com constructor vazio.
+        Aluno a1 = new Aluno();
+        Aluno a2 = new Aluno();
+
+        //Sets 
+        a1.setNome("Felipe Arnus");
+        a2.setNome("João Viera");
+
+        a1.setRm(550923);
+        a2.setRm(99805);
+        
+        a1.setDataDeNascimento(LocalDate.parse("2003-04-17"));
+        a2.setDataDeNascimento(LocalDate.parse("2005-01-12"));
+        
+        //Declaração do novo aluno
+        System.out.print("Digite seu nome: ");
+        nome = scan.nextLine();//Nome->String
+        
+        System.out.print("Informe seu RM: ");
+        rm = scan.nextInt();//rm->integer
+        
+        System.out.print("Informe sua data de nascimento (yyyy-mm-dd): ");
+        data = scan.nextLine();//Lê o nome como string e em seguida converte em uma data
+        dataNsc = LocalDate.parse(data);
+
+        Aluno a3 = new Aluno(nome, rm, dataNsc);//Instancia novo aluno
+        
+        //Declaração de mais um novo aluno
+        System.out.print("Digite seu nome: ");
+        nome = scan.nextLine();//Nome->String
+        
+        System.out.print("Informe seu RM: ");
+        rm = scan.nextInt();//rm->integer
+        
+        System.out.print("Informe sua data de nascimento (yyyy-mm-dd): ");
+        data = scan.nextLine();//Lê o nome como string e em seguida converte em uma data
+        dataNsc = LocalDate.parse(data);
+
+        Aluno a4 = new Aluno(nome, rm, dataNsc);//Instancia novo aluno 2
+        
+
+        // Exibindo informações
+        System.out.println("| RM: " + a1.getRm() + " | Nome: " + a1.getNome() + " | Idade: " + a1.calculaIdadeCompleta(dataAtual)+" |");
+        System.out.println("| RM: " + a2.getRm() + " | Nome: " + a2.getNome() + " | Idade: " + a2.calculaIdadeCompleta(dataAtual) + " |");
+        System.out.println("| RM: " + a3.getRm() + " | Nome: " + a3.getNome() + " | Idade: " + a3.calculaIdadeCompleta(dataAtual) + "|");
+        System.out.println("| RM: " + a4.getRm() + " | Nome: " + a4.getNome() + " | Idade: " + a4.calculaIdadeCompleta(dataAtual) + "|");
+
+        scan.close();
+    }
+}
